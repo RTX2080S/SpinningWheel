@@ -25,7 +25,6 @@ a {
     color: #eaeaea;
 }
 
-
 /*WHEEL*/
 #wheel {
     width: 250px;
@@ -137,10 +136,7 @@ a {
         margin-left: -15px;
         text-shadow: rgba(255, 255, 255, 0.1) 0px -1px 0px, rgba(0, 0, 0, 0.2) 0px 1px 0px;
     }
-
-
-
-
+    
 #spin {
     width: 68px;
     height: 68px;
@@ -160,7 +156,6 @@ a {
     -o-user-select: none;
     user-select: none;
 }
-
 
     #spin:after {
         content: "SPIN";
@@ -216,8 +211,6 @@ a {
     font-size: 15px;
 }
 
-
-
 #shine {
     width: 250px;
     height: 250px;
@@ -233,8 +226,6 @@ a {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     opacity: 0.1;
 }
-
-
 
 /*ANIMATION*/
 @-webkit-keyframes hh {
