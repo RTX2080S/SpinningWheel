@@ -10,8 +10,11 @@ function rotateTo(totalDegree) {
 }
 
 function getSelectedID(totalDegree) {
+    const max = 5;
     var wheelOffset = (totalDegree + 30) % 360;
-    return (Math.floor(wheelOffset / 60));
+    var intermediate = Math.floor(wheelOffset / 60);
+    var result = max - intermediate;
+    return (result);
 }
 
 $(function () {
@@ -70,6 +73,8 @@ $(function () {
         // Get result
         var selectedSlice = getSelectedID(totalDegree);
         console.log('The ID for the selected slice: ' + selectedSlice);
+        var selectedClass = $('#wheel .sec span').eq(selectedSlice).attr('class');
+        console.log('The selected class: ' + selectedClass);
 
     });
 
