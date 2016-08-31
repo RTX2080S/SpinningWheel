@@ -3,7 +3,13 @@ var degree = 1800;
 //number of clicks = 0
 var clicks = 0;
 
-$(document).ready(function () {
+function rotateTo(totalDegree) {
+    $('#inner-wheel').css({
+        'transform': 'rotate(' + totalDegree + 'deg)'
+    });
+}
+
+$(function () {
 
     /*WHEEL SPIN FUNCTION*/
     $('#spin').click(function () {
@@ -33,7 +39,7 @@ $(document).ready(function () {
 
                 var aoY = t.offset().top;
                 $("#txt").html(aoY);
-                console.log(aoY);
+                //console.log(aoY);
 
                 /*23.7 is the minumum offset number that 
 				each section can get, in a 30 angle degree.
@@ -41,7 +47,7 @@ $(document).ready(function () {
 				that it has a 30 degree angle and therefore, 
 				exactly aligned with the spin btn*/
                 if (aoY < 23.89) {
-                    console.log('<<<<<<<<');
+                    //console.log('<<<<<<<<');
                     $('#spin').addClass('spin');
                     setTimeout(function () {
                         $('#spin').removeClass('spin');
@@ -49,14 +55,14 @@ $(document).ready(function () {
                 }
             }, 10);
 
-            $('#inner-wheel').css({
-                'transform': 'rotate(' + totalDegree + 'deg)'
-            });
+            // Rotate to the total degree
+            rotateTo(totalDegree);
+            console.log(totalDegree);
 
             noY = t.offset().top;
 
         });
-    });
-    
-});
 
+    });
+
+});
