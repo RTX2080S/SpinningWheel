@@ -9,6 +9,11 @@ function rotateTo(totalDegree) {
     });
 }
 
+function getSelectedID(totalDegree) {
+    var wheelOffset = (totalDegree + 30) % 360;
+    return (Math.floor(wheelOffset / 60));
+}
+
 $(function () {
 
     /*WHEEL SPIN FUNCTION*/
@@ -57,11 +62,14 @@ $(function () {
 
             // Rotate to the total degree
             rotateTo(totalDegree);
-            console.log(totalDegree);
 
             noY = t.offset().top;
 
         });
+
+        // Get result
+        var selectedSlice = getSelectedID(totalDegree);
+        console.log('The ID for the selected slice: ' + selectedSlice);
 
     });
 
